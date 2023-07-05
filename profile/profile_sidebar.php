@@ -21,13 +21,7 @@
         <?php
           include "../include/db.php";
           session_start();
-          if(isset($_SESSION['username'])){?>
-            <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
-	  			    <div class="user-logo">
-	  				    <div class="img" style="background-image: url(../images/2.jpeg);"></div>
-	  				    <h3><?php echo $_SESSION['username']; ?></h3>
-
-                <?php
+          if(isset($_SESSION['username'])){
                   $user_id = $_SESSION['user_id'];
                   $query = "SELECT * FROM resume WHERE user_id={$user_id}";
                   $result = mysqli_query($connection, $query);
@@ -37,8 +31,13 @@
                     $twt_link = $row['twt_link'];
                     $linkdn_link = $row['linkdn_link'];
                     $is_created = $row['is_created'];
-                  }
-                  if($is_created==1){
+                    $dp = $row['dp'];
+                  }?>
+                  <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			          <div class="user-logo">
+	  				          <div class="img" style="background-image: url(../images/<?php echo $dp;?>);"></div>
+	  				          <h3><?php echo $_SESSION['username']; ?></h3>
+            <?php if($is_created==1){
                     echo "<a href='$fb_link'><i class='fa fa-facebook mr-3'></i></a>";
                     echo "<a href='$insta_link'><i class='fa fa-instagram mr-3'></i></a>";
                     echo "<a href='$twt_link'><i class='fa fa-twitter mr-3'></i></a>";
@@ -69,7 +68,5 @@
             <a href="profile_blogs.php"><span class="fa fa-pencil mr-3"></span> Blogs</a>
           </li>
         </ul>
-        <br>
-        <br>
-        <br>
+        <div class="text-muted text-center position-fixed" style="margin-left:50px;">Copyright &copy; <a class="text-muted" style="text-decoration:none;" href="../index.php">Blogfolio Hub</a> 2023</div>
     	</nav>

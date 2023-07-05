@@ -75,8 +75,8 @@
                                                 echo "<td>{$row['post_comment_count']}</td>";
                                                 echo "<td>{$row['post_status']}</td>";
                                                 $post_id = $row['post_id'];
-                                                echo "<td><a href='delete_post.php?post_id={$post_id}'>Delete</a></td>";
-                                                echo "<td><a href='edit_post.php?post_id={$post_id}'>Edit</a></td>";
+                                                echo "<td><a class='btn btn-danger' href='delete_post.php?post_id={$post_id}' style='text-decoration:none'><b>Delete</b></a></td>";
+                                                echo "<td><a class='btn btn-primary' href='edit_post.php?post_id={$post_id}' style='text-decoration:none'><b>Edit</b></a></td>";
                                                 echo "</tr>";
                                             }
                                         ?>

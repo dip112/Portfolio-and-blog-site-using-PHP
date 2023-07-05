@@ -17,7 +17,7 @@
                             if(isset($_POST['submit'])){
                                 $search_query = $_POST['search'];
                                 $search_query = strtolower($search_query);
-                                $query = "SELECT * FROM posts WHERE post_tags LIKE '%$search_query%' AND post_status=1";
+                                $query = "SELECT * FROM posts WHERE post_tags OR post_title LIKE '%$search_query%' AND post_status=1 ORDER BY post_id DESC";
                                 $result = mysqli_query($connection, $query);
 
                                 if(!$result){

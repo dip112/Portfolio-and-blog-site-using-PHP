@@ -39,7 +39,7 @@
         $profile_image = $_FILES['image']['name'];
         $profile_image_temp = $_FILES['image']['tmp_name'];
 
-        move_uploaded_file($profile_image_temp, "images/$profile_image");
+        move_uploaded_file($profile_image_temp, "images/profile/$profile_image");
 
         $query1 = "SELECT * FROM users WHERE user_email='{$email}'";
         $result1 = mysqli_query($connection, $query1);
@@ -80,7 +80,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - SB Admin</title>
+        <title>Create Resume - Blogfolio Hub</title>
         <link href="admin/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>

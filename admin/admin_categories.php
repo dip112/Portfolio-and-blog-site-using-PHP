@@ -76,7 +76,7 @@
                                                 echo "<td>{$row['cat_id']}</td>";
                                                 echo "<td>{$row['cat_title']}</td>";
                                                 $cat_id = $row['cat_id'];
-                                                echo "<td><a href='admin_categories.php?delete={$cat_id}'>Delete</a></td>";
+                                                echo "<td><a class='btn btn-danger' style='text-decoration:none;' href='admin_categories.php?delete={$cat_id}'>Delete</a></td>";
                                                 echo "</tr>";
                                             }
                                         ?>

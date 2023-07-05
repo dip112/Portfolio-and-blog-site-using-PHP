@@ -8,7 +8,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>iPortfolio Bootstrap Template - Index</title>
+  <title>About - Blogflio Hub</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,7 +34,7 @@
   <body>
 
     <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    <!-- <i class="bi bi-list mobile-nav-toggle d-xl-none"></i> -->
 
     <!-- ======= About Section ======= -->
     <section id="resume" class="resume">
@@ -64,12 +64,13 @@
             $pg_name = $row['pg_dname'];
             $g_year = $row['g_year'];
             $pg_year = $row['pg_year'];
+            $dp = $row['dp'];
           }
         ?>
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="../images/2.jpeg" class="img-fluid" alt="">
+            <img src="../images/profile/<?php echo $dp; ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <!-- <h3><?php echo $_SESSION['username']; ?></h3> -->
@@ -102,5 +103,9 @@
         </div>
       </div>
     </section>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

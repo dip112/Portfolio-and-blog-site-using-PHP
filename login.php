@@ -29,7 +29,11 @@
             $is_etered = 1;
         }
         if($is_etered==0){
-            echo "<h6 class='text-center font-weight-light my-4 text-danger'>userid or password is wrong</h6>";
+            // echo "<h6 class='text-center font-weight-light my-4 text-danger'>userid or password is wrong</h6>";
+            echo "<script>";
+            echo "alert('*userid or password was wrong!');";
+            echo "window.location='login.php';";
+            echo "</script>";
         }
 
         else if($user_email==$email && $user_password==md5($password) && $is_admin==1){
@@ -48,7 +52,11 @@
             header("Location:index.php");
         }
         else{
-            echo "<h6 class='text-center font-weight-light my-4 text-danger'>userid or password is wrong</h6>";
+            // echo "<h6 class='text-center font-weight-light my-4 text-danger'>userid or password is wrong</h6>";
+            echo "<script>";
+            echo "alert('*userid or password was wrong!');";
+            echo "window.location='login.php';";
+            echo "</script>";
         }
     }
 ?>
@@ -62,7 +70,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - SB Admin</title>
+        <title>Login - Blogfolio Hub</title>
         <link href="admin/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -90,14 +98,14 @@
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
+                                                <a class="small" href="forget.php" style="text-decoration: none;">Forgot Password?</a>
                                                 <!-- <a class="btn btn-primary" href="index.html">Login</a> -->
                                                 <button class="btn btn-primary btn-block" type="submit" name="submit">Login</button>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="register.php">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="register.php" style="text-decoration: none;">Need an account? Sign up!</a></div>
                                     </div>
                                 </div>
                             </div>

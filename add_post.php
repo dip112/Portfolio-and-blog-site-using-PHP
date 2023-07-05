@@ -15,10 +15,9 @@
         $post_content = mysqli_real_escape_string($connection, $_POST['post_content']);
         $post_date = date("d-m-y");
         $post_author = $_SESSION['username'];
-        $post_comment = 0;
 
-        $query = "INSERT INTO posts(post_cat_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count)
-                  VALUES({$post_cat_id},'{$post_title}', '{$post_author}', now(), '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_comment}')";
+        $query = "INSERT INTO posts(post_cat_id, post_title, post_author, post_date, post_image, post_content, post_tags)
+                  VALUES({$post_cat_id},'{$post_title}', '{$post_author}', now(), '{$post_image}', '{$post_content}', '{$post_tags}')";
         $result = mysqli_query($connection, $query);
         if($result){
             echo "<script>";

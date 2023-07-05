@@ -14,9 +14,10 @@
                     
 
                         <?php
-                            $query = "SELECT * FROM posts WHERE post_status=1";
+                            $query = "SELECT * FROM posts WHERE post_status=1 ORDER BY post_id DESC";
                             $post_data = mysqli_query($connection, $query);
                             while($row = mysqli_fetch_assoc($post_data)){
+                                $user_id = $row['user_id'];
                                 $post_id = $row['post_id'];
                                 $post_title = $row['post_title'];
                                 $post_author = $row['post_author'];
@@ -33,11 +34,11 @@
                                         <div class="small text-muted">
                                             <p>
                                                 <i class="fa fa-clock-o" aria-hidden="true"> <?php echo $post_date; ?></i>
-                                                <i><?php echo '<br>'; ?>by <a href="#" style="text-decoration:None; color:#696969"><?php echo $post_author; ?></a></i>
+                                                <i><?php echo '<br>'; ?>by <a href="public-profile/profile_validation.php?user_id=<?php echo $user_id; ?>" target="_blank" style="text-decoration:None; color:#696969"><?php echo $post_author; ?></a></i>
                                             </p>
                                         </div>
                                         <p class="card-text"><?php echo $post_content ?></p>
-                                        <a class="btn btn-dark" href="#!">Read more →</a>
+                                        <a class="btn btn-dark" href="post.php?post_id=<?php echo $post_id; ?>">Read more →</a>
                                     </div>
                                 </div>
 

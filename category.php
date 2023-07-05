@@ -17,7 +17,7 @@
                             if(isset($_GET['cat_id'])){
                                 $cat_id = $_GET['cat_id'];
                             }
-                            $query = "SELECT * FROM posts WHERE post_cat_id={$cat_id} AND post_status=1";
+                            $query = "SELECT * FROM posts WHERE post_cat_id={$cat_id} AND post_status=1 ORDER BY post_id DESC";
                             $post_data = mysqli_query($connection, $query);
                             while($row = mysqli_fetch_assoc($post_data)){
                                 $post_id = $row['post_id'];
@@ -31,7 +31,7 @@
                                     <a href="post.php?post_id=<?php echo $post_id; ?>"><img class="card-img-top" src="images/post/<?php echo $post_image; ?>" alt="..." /></a>
                                     <div class="card-body">
                                         <h2 class="card-title">
-                                            <a href="post.php?post_id=<?php echo $post_id; ?>" style="text-decoration:None"><?php echo $post_title ?></a>
+                                            <a href="post.php?post_id=<?php echo $post_id; ?>" style="text-decoration:None; color:black"><?php echo $post_title ?></a>
                                         </h2>
                                         <div class="small text-muted">
                                             <p>
@@ -40,7 +40,7 @@
                                             </p>
                                         </div>
                                         <p class="card-text"><?php echo $post_content ?></p>
-                                        <a class="btn btn-primary" href="#!">Read more →</a>
+                                        <a class="btn btn-dark" href="post.php?post_id=<?php echo $post_id?>">Read more →</a>
                                     </div>
                                 </div>
 
